@@ -1,38 +1,100 @@
-.App {
-  text-align: center;
+
+
+.movies-card {
+    display: flex;
+    justify-content: space-around;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 3rem;
+}
+
+.movie-card {
+    width: 16rem;
+    height: 40rem;
+}
+
+.card-img {
+    width: 238px;
+    height: 357px;
+}
+
+.movie-info {
+    font-size: 0.8rem;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+    width: 7.5rem;
+    height: auto;
+}
+.position-rating {
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    background-color: yellow;
+    width: 4rem;
+    height: auto;
+    left: 11rem;
+    top: 0.5rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.rating {
+   margin-top: 1rem;
+   color: black;
+   font-size: 0.8em;
+   font-weight: bold;
+}
+
+ #text {
+     font-size: 2rem;
+     text-align: center;
+ }
+
+ .flip-card {
+    background-color: transparent;
+    width: 16rem;
+    height: 40rem;
+    perspective: 1000px;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  .flip-card-inner {
+    position: relative;
+    width: 16rem;
+    height: 40rem;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   }
-  to {
-    transform: rotate(360deg);
+  
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
   }
-}
+  
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 16rem;
+    height: 40rem;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  .flip-card-front {
+    background-color: #bbb;
+    color: black;
+  }
+  
+  .flip-card-back {
+    background-color : grey;
+    color: white;
+    transform: rotateY(180deg);
+  }
+
+  dl h5 {
+    text-decoration: underline;
+  }
+
+  .carousel-img {
+      height: 25rem;
+  }
+
+  .carousel {
+      margin-top: -3rem;
+  }
