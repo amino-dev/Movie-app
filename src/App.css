@@ -1,12 +1,15 @@
 
+
+.home {
+  background-color: #9dc5c3;
+  background-image: linear-gradient(315deg, #9dc5c3 0%, #5e5c5c 74%);
+}
+
 .App-logo {
   width: 7.5rem;
   height: auto;
 }
 
-.footer-link , .footer-link:hover{
-  color: black;
-}
 .movies-card {
     display: flex;
     justify-content: space-around;
@@ -150,7 +153,6 @@
   opacity: 1;
 }
 
-
 .position-rating {
     clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
     background-color: yellow;
@@ -171,6 +173,7 @@
  #text {
      font-size: 2rem;
      text-align: center;
+     color: #ffffff;
  }
 
  /* .flip-card {
@@ -234,7 +237,6 @@
     -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
     -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
-   
   }
 
   .search:focus {
@@ -255,6 +257,29 @@
     padding-bottom: 0px;
    }
 
+   @media only screen and (max-width: 980px) {
+    .search {
+      display: block;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+   }
+
+   @media only screen and (max-width: 580px) {
+    .form-inline .form-control {
+      width: 200px !important;
+    }
+   }
+
+   @media only screen and (max-width: 400px) {
+    .form-inline .form-control {
+      width: 100px !important;
+    }
+    .search {
+      width: 280px;
+    }
+   }
+
    .form-inline .form-control:focus, button:hover {
      background: none !important;
      outline: none !important;
@@ -263,8 +288,23 @@
    
    .footer-description {
      line-height: 1.75rem;
-     font-size: 1rem;
+     font-size: 1.1rem;
+   }
+  
+   .footer, #navbar {
+     background-color: #cfcfcf !important;
+     color: rgba(0,0,0,.5);
    }
 
-  
-  
+   .social a {
+    color: rgba(0,0,0,.5);
+    font-size: 1.5rem;
+    }
+
+   .footer-link {
+   color: rgba(0,0,0,.5);
+   }
+
+   .footer-link:hover, .social a:hover {
+   color: black;
+   }

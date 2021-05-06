@@ -4,7 +4,7 @@ import Images from './carousel'
 function Home() {
 
     return (
-      <div>
+      <div className="home">
            <Images />
            <Text />
            <Movies />

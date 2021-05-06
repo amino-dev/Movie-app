@@ -6,7 +6,7 @@ import { Link } from "react-router-dom"
 function NavBar(){
   return(
 <div className="mb-5">
-<Navbar collapseOnSelect fixed="top" expand="lg" bg="light" variant="light">
+<Navbar id="navbar" collapseOnSelect fixed="top" expand="lg" bg="light" variant="light">
   <Navbar.Brand><img src={logo} className="App-logo" alt="logo" /></Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
@@ -18,7 +18,7 @@ function NavBar(){
         <Link className="nav-link" to="/">Home</Link>
         <Link className="nav-link" to="/movies">Movies</Link>
         <Link className="nav-link" to="/series">Series</Link>
-        <Link className="nav-link" to="/favorite"><FaHeart className="favoris-button"/></Link>
+        <Link className="nav-link" to="/favorite"><FaHeart className="favoris-button mb-1"/></Link>
     </Nav>
   </Navbar.Collapse>
 </Navbar>
