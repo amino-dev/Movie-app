@@ -1,23 +1,24 @@
 import logo from '../img/logo.png'
 import {Navbar, Nav, Form, FormControl, Button} from "react-bootstrap"
-import { FaHeart} from 'react-icons/fa'
+import { FaHeart, FaSearch} from 'react-icons/fa'
+import { Link } from "react-router-dom"
 
 function NavBar(){
   return(
 <div className="mb-5">
-<Navbar collapseOnSelect expand="lg" bg="light" variant="light">
-  <Navbar.Brand href="#home"><img src={logo} className="App-logo" alt="logo" /></Navbar.Brand>
+<Navbar collapseOnSelect fixed="top" expand="lg" bg="light" variant="light">
+  <Navbar.Brand><img src={logo} className="App-logo" alt="logo" /></Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
-    <Form inline className="ml-auto">
-      <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-      <Button  variant="outline-dark">Search</Button>
+    <Form inline className="ml-auto search">
+      <Button  className="button my-auto" variant="outline-dark"><FaSearch /></Button>
+      <FormControl type="text" placeholder="Search" className=" mr-sm-2" />
     </Form>
     <Nav className="ml-auto">
-      <Nav.Link href="#">Home</Nav.Link>
-      <Nav.Link href="#">Movies</Nav.Link>
-      <Nav.Link href="#">Series</Nav.Link>
-      <Nav.Link href="#" className="my-auto"><FaHeart/></Nav.Link>
+        <Link className="nav-link" to="/">Home</Link>
+        <Link className="nav-link" to="/movies">Movies</Link>
+        <Link className="nav-link" to="/series">Series</Link>
+        <Link className="nav-link" to="/favorite"><FaHeart className="favoris-button"/></Link>
     </Nav>
   </Navbar.Collapse>
 </Navbar>

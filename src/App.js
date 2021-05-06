@@ -1,24 +1,30 @@
 
-
 import './App.css';
-import Movies from './components/movies';
+import Home from './components/home';
+import Films from './components/films';
+import Series from './components/series';
+import Favorites from './components/favorites'
 import NavBar from './components/nav';
-import Text from './components/text';
-import Images from './components/carousel'
 import Footer from './components/footer'
-
-
+import { BrowserRouter, Route} from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-     <NavBar />
-     <Images />
-     <Text />
-     <Movies />
-     <Footer/>
-     
+     <div>
+      <BrowserRouter>
+        <NavBar />
+          <Route exact path="/" component={Home} />
+          <Route path="/movies" component={Films} />
+          <Route path="/series" component={Series} />
+          <Route path="/favorite" component={Favorites} />
+          <Footer/>
+      </BrowserRouter>
+     </div>
     </div>
   );
 }
 export default App;
+
+
+
