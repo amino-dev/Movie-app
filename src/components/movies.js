@@ -1,9 +1,11 @@
 import React, {useState,useEffect} from 'react'
+import Rater from 'react-rater'
+import 'react-rater/lib/react-rater.css'
 // import {FaHeart, FaEye} from 'react-icons/fa'
 // import {Card, Button} from 'react-bootstrap'
 
 
-function Movies() {
+function Movies({search}) {
   const [movie, setMovie] = useState([])
   const getMovie = ()=>{
     
@@ -12,13 +14,18 @@ function Movies() {
                    (movie => setMovie(movie));
   }
   
-  useEffect(()=> {getMovie()
-  },[])
+  useEffect(()=> {getMovie() },[])
 
-  console.log(movie)
   return(
+
   <div className="movies-card container">
-   { movie.map(el=>
+   {movie.filter((el) => {
+     if (search === "") {
+       return el
+     } else if (el.Title.toLowerCase().includes(search.toLowerCase())){
+       return el
+     }
+    }).map(el=>
      <div className="movie-card mb-5" >
       <div class="position-relative">
         <div>
@@ -46,11 +53,14 @@ function Movies() {
           <p className="rating"><span>{el.imdbRating}</span></p>
         </div>
       </div>
+      <div className="d-flex justify-content-center">
+        <Rater total={5} rating={el.Rating}/>
+      </div>
      </div>
-   )}
+   ) }
 </div> 
    )
- }
+ } 
 export default Movies
 
 

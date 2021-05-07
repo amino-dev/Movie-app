@@ -1,8 +1,6 @@
 
-
-.home {
-  background-color: #9dc5c3;
-  background-image: linear-gradient(315deg, #9dc5c3 0%, #5e5c5c 74%);
+.home, .films, .series {
+  background-color: #0f181d;
 }
 
 .App-logo {
@@ -220,6 +218,11 @@
     text-decoration: underline;
   } */
 
+
+  .carousel {
+    padding-top: 2.6rem;
+  }
+
   .carousel-img {
       height: 25rem;
   }
@@ -284,6 +287,7 @@
      background: none !important;
      outline: none !important;
      color: black  !important;
+
    } 
    
    .footer-description {
@@ -302,9 +306,40 @@
     }
 
    .footer-link {
-   color: rgba(0,0,0,.5);
+     color: rgba(0,0,0,.5);
    }
 
    .footer-link:hover, .social a:hover {
-   color: black;
+     color: black;
    }
+  
+   .react-rater-star.is-active{
+     color: yellow !important;
+     font-size: 1.5rem !important;
+
+   }
+
+  .react-rater-star {
+    cursor: pointer;
+    color: white !important;
+    font-size: 1.5rem !important;
+    position: relative;
+  }
+ 
+  .form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-bottom-color: black !important;
+    outline: 0;
+    box-shadow: 0 0 0 0 !important;
+  }
+
+  .form-control, .btn{
+    border-radius: 0rem !important;
+  }
+
+ .btn.focus, .btn:focus {
+  outline: 0 !important;
+  box-shadow: 0 0 0 0 !important;
+  }
+

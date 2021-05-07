@@ -1,7 +1,12 @@
+import NavBar from './nav';
+
 function Favorites() {
 
     return (
-       <p>Favorites </p>
+       <div>
+         <NavBar />
+         <p  className="pt-5">Favorites</p>
+       </div>
     ) 
 }
 export default Favorites 

@@ -4,7 +4,6 @@ import Home from './components/home';
 import Films from './components/films';
 import Series from './components/series';
 import Favorites from './components/favorites'
-import NavBar from './components/nav';
 import Footer from './components/footer'
 import { BrowserRouter, Route} from "react-router-dom";
 
@@ -13,7 +12,6 @@ function App() {
     <div className="App">
      <div>
       <BrowserRouter>
-        <NavBar />
           <Route exact path="/" component={Home} />
           <Route path="/movies" component={Films} />
           <Route path="/series" component={Series} />
