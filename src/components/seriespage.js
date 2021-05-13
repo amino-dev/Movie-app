@@ -6,24 +6,13 @@ import 'react-rater/lib/react-rater.css'
 // import {Card, Button} from 'react-bootstrap'
 
 
-function SeriesPage() {
-  const [movie, setMovie] = useState([])
-  const getMovie = ()=>{
-    
-    fetch('movies.json').then(
-          response => response.json()).then 
-                   (movie => setMovie(movie));
-  }
-  
-  useEffect(()=> {getMovie() },[])
-
+function SeriesPage({search,movie,getFavorites}) {
   return(
-
   <div className="movies-card container">
    {movie.filter((el) => {
-     if ( el.Type === "serie") {
-       return el
-     }
+     if ((el.Type === "serie" && search === "") || (el.Type === "serie" && el.Title.toLowerCase().includes(search.toLowerCase()))){
+      return el
+    }
     }).map(el=>
      <div className="movie-card mb-5" >
       <div class="position-relative">
@@ -40,8 +29,8 @@ function SeriesPage() {
 			      <div className="d-flex justify-content-around mb-2">
               <p className="my-auto ">{el.Year}</p>
               <p className="my-auto mr-3">{el.Runtime}</p>
-              <a href="#"><i class="ion-eye icons mr-5"></i></a>
-              <a href="#"><i class="ion-heart icons"></i></a>
+              <a><i class="ion-eye icons mr-5"></i></a>
+              <a onClick={getFavorites}><i class="ion-heart icons"></i></a>
               {/* <Button variant="" ><FaEye className="icons"/></Button>
               <Button variant="" ><FaHeart className="icons"/></Button> */}
             </div> 

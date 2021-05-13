@@ -2,13 +2,11 @@ import MoviesPage from './moviespage';
 import NavBar from './nav';
 
 
-function Films() {
-
+function Films({movie,search,getFavorites}) {
     return (
         <div className="films">
-         <NavBar />
          <p  className="pt-5">Films</p>
-         <MoviesPage />
+         <MoviesPage movie={movie} search={search} getFavorites={getFavorites} />
         </div>
     ) 
 }

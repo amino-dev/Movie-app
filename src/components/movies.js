@@ -5,17 +5,8 @@ import 'react-rater/lib/react-rater.css'
 // import {Card, Button} from 'react-bootstrap'
 
 
-function Movies({search}) {
-  const [movie, setMovie] = useState([])
-  const getMovie = ()=>{
-    
-    fetch('movies.json').then(
-          response => response.json()).then 
-                   (movie => setMovie(movie));
-  }
-  
-  useEffect(()=> {getMovie() },[])
-
+function Movies({search, movie,getFavorites}) {
+ 
   return(
 
   <div className="movies-card container">
@@ -41,8 +32,8 @@ function Movies({search}) {
 			      <div className="d-flex justify-content-around mb-2">
               <p className="my-auto ">{el.Year}</p>
               <p className="my-auto mr-3">{el.Runtime}</p>
-              <a href="#"><i class="ion-eye icons mr-5"></i></a>
-              <a href="#"><i class="ion-heart icons"></i></a>
+              <a><i class="ion-eye icons mr-5"></i></a>
+              <a onClick={getFavorites}><i class="ion-heart icons"></i></a>
               {/* <Button variant="" ><FaEye className="icons"/></Button>
               <Button variant="" ><FaHeart className="icons"/></Button> */}
             </div> 

@@ -1,15 +1,13 @@
 import NavBar from './nav';
 import SeriesPage from './seriespage'
 
-function Series() {
+function Series({movie,search,getFavorites}) {
 
     return (
         <div className="series">
-          <NavBar />
           <p className="pt-5">Series</p>
-          <SeriesPage />
-        </div>
-       
+          <SeriesPage search={search} movie={movie}  getFavorites={getFavorites}/>
+        </div> 
     ) 
 }
 export default Series
