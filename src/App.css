@@ -6,7 +6,7 @@
  bottom: 0.5rem !important;
 }
 
-.home, .films, .series {
+.home, .films, .series, .favorite {
   background-color: #0f181d;
 }
 
@@ -15,10 +15,10 @@
   height: auto;
 }
 
-.movies-card {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+.movies-card,.favorite {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .movie-card {
@@ -308,6 +308,10 @@
      color: rgba(0,0,0,.5);
    }
 
+   .favorite {
+    margin-bottom: -3rem;
+   }
+
    .footer {
      margin-bottom: -8.4rem;
    }
@@ -329,6 +333,15 @@
      color: yellow !important;
      font-size: 1.5rem !important;
    }
+
+   .react-rater-star.is-active-half:before {
+    color: yellow !important;
+    content: '\2605';
+    position: absolute;
+    left: 0;
+    width: 50%;
+    overflow: hidden;
+  }
 
   .react-rater-star {
     cursor: pointer;

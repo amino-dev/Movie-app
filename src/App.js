@@ -30,15 +30,21 @@ function App() {
     setFavorite(favorite + 1)
   }
 
+  const [favoriteMovies, setFavoriteMovies] = useState([])
+  const addFavoriteMovies =(e) => {
+  favoriteMovies.push(e)
+  console.log(favoriteMovies)
+  }
+
   return (
     <div className="App">
      <div>
       <BrowserRouter>
           <NavBar searchMovie={searchMovie} favorite={favorite}/>
-          <Route exact path="/"><Home movie={movie} search={search} getFavorites={getFavorites} /></Route>
-          <Route path="/movies"><Films movie={movie} search={search} getFavorites={getFavorites}/></Route>
-          <Route path="/series"><Series movie={movie} search={search} getFavorites={getFavorites}/></Route>
-          <Route path="/favorite"><Favorites getFavorites={getFavorites}/></Route>
+          <Route exact path="/"><Home movie={movie} search={search} getFavorites={getFavorites}  addFavoriteMovies={addFavoriteMovies}/></Route>
+          <Route path="/movies"><Films movie={movie} search={search} getFavorites={getFavorites} addFavoriteMovies={addFavoriteMovies}/></Route>
+          <Route path="/series"><Series movie={movie} search={search} getFavorites={getFavorites} addFavoriteMovies={addFavoriteMovies}/></Route>
+          <Route path="/favorite"><Favorites search={search} favoriteMovies={favoriteMovies}/></Route>
           <Footer/>
       </BrowserRouter>
      </div>

@@ -1,11 +1,11 @@
-import React, {useState,useEffect} from 'react'
+
 import Rater from 'react-rater'
 import 'react-rater/lib/react-rater.css'
 // import {FaHeart, FaEye} from 'react-icons/fa'
 // import {Card, Button} from 'react-bootstrap'
 
 
-function Movies({search, movie,getFavorites}) {
+function Movies({search,movie,getFavorites,addFavoriteMovies}) {
  
   return(
 
@@ -18,7 +18,7 @@ function Movies({search, movie,getFavorites}) {
      }
     }).map(el=>
      <div className="movie-card mb-5" >
-      <div class="position-relative">
+      <div className="position-relative">
         <div>
          <figure className="hover-img">
           <img className="card-img" variant="top" src={el.Poster} />
@@ -26,26 +26,27 @@ function Movies({search, movie,getFavorites}) {
             <h5 className="text-center mb-3">{el.Title}</h5>
             <p className="text-center mb-3 plot">{el.Plot}</p>
             <div className="d-flex justify-content-around mb-3">
-             <p class="">{el.Type}</p>
-             <p class="">{el.Genre}</p>
+             <p className="">{el.Type}</p>
+             <p className="">{el.Genre}</p>
             </div> 
 			      <div className="d-flex justify-content-around mb-2">
               <p className="my-auto ">{el.Year}</p>
               <p className="my-auto mr-3">{el.Runtime}</p>
-              <a><i class="ion-eye icons mr-5"></i></a>
-              <a onClick={getFavorites}><i class="ion-heart icons"></i></a>
+              <a><i className="ion-eye icons mr-5"></i></a>
+              <a onClick={ () => {getFavorites(); addFavoriteMovies(el)}}><i class="ion-heart icons"></i></a>
+              
               {/* <Button variant="" ><FaEye className="icons"/></Button>
               <Button variant="" ><FaHeart className="icons"/></Button> */}
             </div> 
 		      </figcaption>
    	     </figure>
         </div>
-        <div class=" position-absolute position-rating position-absolute top-0 end-50">
+        <div className=" position-absolute position-rating position-absolute top-0 end-50">
           <p className="rating"><span>{el.imdbRating}</span></p>
         </div>
       </div>
       <div className="d-flex justify-content-center">
-        <Rater total={5} rating={el.Rating}/>
+        <Rater interactive={false} total={5} rating={el.Rating}/>
       </div>
      </div>
    ) }
