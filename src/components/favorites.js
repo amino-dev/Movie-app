@@ -1,15 +1,19 @@
 
-import { Container, Row } from 'react-bootstrap'
+import { Container} from 'react-bootstrap'
+import img from '../img/wishlist.png'
 import Rater from 'react-rater'
 import 'react-rater/lib/react-rater.css'
 function Favorites({favoriteMovies}) {
 
     return (
-  
- <div className="favorite py-5">
-         <p className="pt-5"></p>
-        {favoriteMovies.map(el=>
-     <div className="movie-card mr-5 pt-4 mb-5" >
+ <div className="favorite">
+     <div className="d-flex justify-content-center pt-5">
+       <img src={img}/>
+     </div>
+    <Container>
+   <div className="d-flex justify-content-around flex-wrap">
+   {favoriteMovies.map(el=>
+     <div className="movie-card pt-4 mb-5" >
       <div className="position-relative">
         <div>
          <figure className="hover-img">
@@ -32,12 +36,18 @@ function Favorites({favoriteMovies}) {
           <p className="rating"><span>{el.imdbRating}</span></p>
         </div>
       </div>
-      <div className="d-flex justify-content-center">
+      <div className="d-flex justify-content-center ml-3">
         <Rater interactive={false} total={5} rating={el.Rating}/>
       </div>
      </div>
    ) }
-</div> 
+
+   </div>
+      
+</Container> 
+
+ </div>
+
 
    )
  } 

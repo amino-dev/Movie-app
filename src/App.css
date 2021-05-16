@@ -15,7 +15,7 @@
   height: auto;
 }
 
-.movies-card,.favorite {
+.movies-card{
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -23,6 +23,10 @@
 
 .movie-card {
     width: 16rem;
+}
+
+.favorite {
+  overflow-x: hidden;
 }
 
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,500,900);
@@ -164,7 +168,7 @@
     background-color: yellow;
     width: 4rem;
     height: auto;
-    left: 11rem;
+    left: 12.5rem;
     top: 0.5rem;
 }
 
@@ -308,10 +312,6 @@
      color: rgba(0,0,0,.5);
    }
 
-   .favorite {
-    margin-bottom: -3rem;
-   }
-
    .footer {
      margin-bottom: -8.4rem;
    }
@@ -365,5 +365,10 @@
  .btn.focus, .btn:focus {
   outline: 0 !important;
   box-shadow: 0 0 0 0 !important;
+  }
+
+  .wish-list {
+    color: #fff;
+    padding-top: 5rem;
   }
 
