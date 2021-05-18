@@ -13,7 +13,7 @@ function MoviesPage({search,movie,getFavorites,addFavoriteMovies}) {
        return el
      }
     }).map(el=>
-     <div className="movie-card mb-5" >
+     <div className="movie-card mb-5">
       <div className="position-relative">
         <div>
          <figure className="hover-img">
@@ -26,7 +26,7 @@ function MoviesPage({search,movie,getFavorites,addFavoriteMovies}) {
              <p className="">{el.Genre}</p>
             </div> 
 			      <div className="d-flex justify-content-around mb-2">
-              <p className="my-auto ">{el.Year}</p>
+              <p className="my-auto">{el.Year}</p>
               <p className="my-auto mr-3">{el.Runtime}</p>
               <a><i className="ion-eye icons mr-5"></i></a>
               <a onClick={ () => {getFavorites(); addFavoriteMovies(el)}}><i class="ion-heart icons"></i></a>

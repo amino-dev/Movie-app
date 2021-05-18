@@ -3,14 +3,17 @@ import { Container} from 'react-bootstrap'
 import img from '../img/wishlist.png'
 import Rater from 'react-rater'
 import 'react-rater/lib/react-rater.css'
-function Favorites({favoriteMovies}) {
+import { FaHeartBroken} from 'react-icons/fa'
+import { isElement } from 'react-dom/test-utils'
 
-    return (
+function Favorites({favoriteMovies,removeFromWishlist,removeAllFavorites}) {
+    return ( 
  <div className="favorite">
      <div className="d-flex justify-content-center pt-5">
        <img src={img}/>
      </div>
     <Container>
+  <a onClick={()=>removeAllFavorites()}><FaHeartBroken className=" icons mr-5"/></a>
    <div className="d-flex justify-content-around flex-wrap">
    {favoriteMovies.map(el=>
      <div className="movie-card pt-4 mb-5" >
@@ -28,6 +31,7 @@ function Favorites({favoriteMovies}) {
 			      <div className="d-flex justify-content-around mb-2">
               <p className="my-auto ">{el.Year}</p>
               <p className="my-auto mr-3">{el.Runtime}</p>
+              <a onClick={()=>removeFromWishlist(el)}><FaHeartBroken className=" icons mr-5"/></a>
             </div> 
 		      </figcaption>
    	     </figure>
@@ -41,13 +45,9 @@ function Favorites({favoriteMovies}) {
       </div>
      </div>
    ) }
-
-   </div>
-      
+   </div>    
 </Container> 
-
  </div>
-
 
    )
  } 

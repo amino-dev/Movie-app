@@ -13,7 +13,7 @@ function SeriesPage({search,movie,getFavorites,addFavoriteMovies}) {
       return el
     }
     }).map(el=>
-     <div className="movie-card mb-5" >
+     <div className="movie-card mb-5">
       <div className="position-relative">
         <div>
          <figure className="hover-img">

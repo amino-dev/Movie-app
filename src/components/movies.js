@@ -1,12 +1,21 @@
-
+import ReactPlayer from 'react-player'
+import {Modal} from 'react-bootstrap'
 import Rater from 'react-rater'
+// import Player from './player'
+
+// import Playerr from './playerr'
+import React, {useState,useEffect} from 'react'
 import 'react-rater/lib/react-rater.css'
 // import {FaHeart, FaEye} from 'react-icons/fa'
 // import {Card, Button} from 'react-bootstrap'
 
 
 function Movies({search,movie,getFavorites,addFavoriteMovies}) {
- 
+  const [show, setShow] = useState(false);
+  const [lgShow, setLgShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   return(
 
   <div className="movies-card container">
@@ -17,7 +26,7 @@ function Movies({search,movie,getFavorites,addFavoriteMovies}) {
        return el
      }
     }).map(el=>
-     <div className="movie-card mb-5" >
+     <div className="movie-card mb-5">
       <div className="position-relative">
         <div>
          <figure className="hover-img">
@@ -32,9 +41,30 @@ function Movies({search,movie,getFavorites,addFavoriteMovies}) {
 			      <div className="d-flex justify-content-around mb-2">
               <p className="my-auto ">{el.Year}</p>
               <p className="my-auto mr-3">{el.Runtime}</p>
-              <a><i className="ion-eye icons mr-5"></i></a>
-              <a onClick={ () => {getFavorites(); addFavoriteMovies(el)}}><i class="ion-heart icons"></i></a>
-              
+              <a  onClick={() => setLgShow(true)}><i className="ion-play icons mr-5"></i></a>
+              <Modal
+                size="lg"
+                show={lgShow}
+                onHide={() => setLgShow(false)}
+                aria-labelledby="example-modal-sizes-title-lg"
+              >
+                <Modal.Header closeButton>
+                 <Modal.Title>
+                 </Modal.Title>
+                </Modal.Header>
+               <Modal.Body>
+                {/* <video controls width="250"
+                src={el.Video}
+                /> */}
+                <ReactPlayer className="video"
+                 url = {el.Video}
+                 controls
+                 width = "765px"
+                 height = "300px"
+                /> 
+               </Modal.Body>
+              </Modal>
+                      <a onClick={ () => {getFavorites(); addFavoriteMovies(el)}}><i class="ion-heart icons"></i></a>
               {/* <Button variant="" ><FaEye className="icons"/></Button>
               <Button variant="" ><FaHeart className="icons"/></Button> */}
             </div> 
@@ -49,10 +79,12 @@ function Movies({search,movie,getFavorites,addFavoriteMovies}) {
         <Rater interactive={false} total={5} rating={el.Rating}/>
       </div>
      </div>
+
    ) }
 </div> 
    )
- } 
+ }
+
 export default Movies
 
 

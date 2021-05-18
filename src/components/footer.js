@@ -31,7 +31,7 @@ function Footer() {
    <Link className="nav-link footer-link mt-3" to="/">Home</Link>
    <Link className="nav-link footer-link" to="/movies">Movies</Link>
    <Link className="nav-link footer-link" to="/series">Series</Link>
-   <Link className="nav-link footer-link" to="/favorite">Wish list</Link>
+   <Link className="nav-link footer-link" to="/favorite">Wishlist</Link>
  
 
  </Col>
