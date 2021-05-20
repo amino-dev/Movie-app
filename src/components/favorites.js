@@ -4,6 +4,7 @@ import img from '../img/wishlist.png'
 import Rater from 'react-rater'
 import 'react-rater/lib/react-rater.css'
 import { FaHeartBroken} from 'react-icons/fa'
+import {Button} from 'react-bootstrap'
 import { isElement } from 'react-dom/test-utils'
 
 function Favorites({favoriteMovies,removeFromWishlist,removeAllFavorites}) {
@@ -13,7 +14,7 @@ function Favorites({favoriteMovies,removeFromWishlist,removeAllFavorites}) {
        <img src={img}/>
      </div>
     <Container>
-  <a onClick={()=>removeAllFavorites()}><FaHeartBroken className=" icons mr-5"/></a>
+    <Button onClick={()=>removeAllFavorites()} className="remove-button mb-5">Remove wishlist</Button>
    <div className="d-flex justify-content-around flex-wrap">
    {favoriteMovies.map(el=>
      <div className="movie-card pt-4 mb-5" >

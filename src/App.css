@@ -539,3 +539,8 @@
     padding-top: 5rem;
   }
 
+  .remove-button,.remove-button:hover {
+    background-color: #495057 !important;
+    color: #fff !important;
+  }
+
