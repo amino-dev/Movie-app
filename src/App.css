@@ -544,3 +544,29 @@
     color: #fff !important;
   }
 
+  .dashboard {
+    padding-top: 6.5rem;
+    background-color: #0f181d;
+  }
+
+  input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+
+  .icon {
+    font-size : 1.5rem;
+  }
+
+  .btn-icon {
+     color: black !important; 
+     background-color: transparent !important; 
+     border-color:  transparent !important; 
+}
+
+.dashboard-card {
+  height: 22rem !important;
+}
+
+.admin-icons {
+ font-size : 2rem !important;
+}

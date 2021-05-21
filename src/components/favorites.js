@@ -1,4 +1,5 @@
-
+import Footer from './footer'
+import NavBar from './nav'
 import { Container} from 'react-bootstrap'
 import img from '../img/wishlist.png'
 import Rater from 'react-rater'
@@ -7,8 +8,11 @@ import { FaHeartBroken} from 'react-icons/fa'
 import {Button} from 'react-bootstrap'
 import { isElement } from 'react-dom/test-utils'
 
-function Favorites({favoriteMovies,removeFromWishlist,removeAllFavorites}) {
+function Favorites({favoriteMovies,removeFromWishlist,removeAllFavorites,searchMovie,favorite}) {
     return ( 
+
+<div>
+{/* <NavBar searchMovie={searchMovie} favorite={favorite}/> */}
  <div className="favorite">
      <div className="d-flex justify-content-center pt-5">
        <img src={img}/>
@@ -46,10 +50,11 @@ function Favorites({favoriteMovies,removeFromWishlist,removeAllFavorites}) {
       </div>
      </div>
    ) }
-   </div>    
+   </div>   
 </Container> 
  </div>
-
+ <Footer/> 
+ </div>
    )
  } 
 

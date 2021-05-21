@@ -6,16 +6,20 @@ import Series from './components/series';
 import Favorites from './components/favorites'
 import Footer from './components/footer'
 import NavBar from './components/nav'
+import Dashboard from './components/dashboard'
 import React, {useState,useEffect} from 'react'
+import axios from 'axios'
 import {BrowserRouter, Route} from "react-router-dom"
 
 function App() {
   const [movie, setMovie] = useState([])
   const getMovie = ()=>{
     
-    fetch('movies.json').then(
-          response => response.json()).then 
-                   (movie => setMovie(movie));
+    axios.get('http://localhost:3006/posts').then((response)=> { 
+          
+      setMovie(response.data)
+})
+
   }
   
   useEffect(()=> {getMovie() },[])
@@ -64,8 +68,9 @@ function App() {
           <Route path="/movies"><Films movie={movie} search={search} getFavorites={getFavorites} addFavoriteMovies={addFavoriteMovies}/></Route>
           <Route path="/series"><Series movie={movie} search={search} getFavorites={getFavorites} addFavoriteMovies={addFavoriteMovies}/></Route>
           <Route path="/favorite"><Favorites search={search} favoriteMovies={favoriteMovies} removeFromWishlist={removeFromWishlist} removeAllFavorites={removeAllFavorites} /></Route>
-          <Footer/>
+          <Route path="/admin"><Dashboard movie={movie}/></Route>
       </BrowserRouter>
+
      </div>
     </div>
   );
