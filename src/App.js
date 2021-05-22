@@ -63,12 +63,12 @@ function App() {
     <div className="App">
      <div>
       <BrowserRouter>
-          <NavBar searchMovie={searchMovie} favorite={favorite}/>
-          <Route exact path="/"><Home movie={movie} search={search} getFavorites={getFavorites}  addFavoriteMovies={addFavoriteMovies}/></Route>
-          <Route path="/movies"><Films movie={movie} search={search} getFavorites={getFavorites} addFavoriteMovies={addFavoriteMovies}/></Route>
-          <Route path="/series"><Series movie={movie} search={search} getFavorites={getFavorites} addFavoriteMovies={addFavoriteMovies}/></Route>
-          <Route path="/favorite"><Favorites search={search} favoriteMovies={favoriteMovies} removeFromWishlist={removeFromWishlist} removeAllFavorites={removeAllFavorites} /></Route>
-          <Route path="/admin"><Dashboard movie={movie}/></Route>
+          {/* <NavBar searchMovie={searchMovie} favorite={favorite}/> */}
+          <Route exact path="/movieapp"><Home searchMovie={searchMovie} favorite={favorite} movie={movie} search={search} getFavorites={getFavorites}  addFavoriteMovies={addFavoriteMovies}/></Route>
+          <Route path="/movieapp/movies"><Films searchMovie={searchMovie} favorite={favorite} movie={movie} search={search} getFavorites={getFavorites} addFavoriteMovies={addFavoriteMovies}/></Route>
+          <Route path="/movieapp/series"><Series searchMovie={searchMovie} favorite={favorite} movie={movie} search={search} getFavorites={getFavorites} addFavoriteMovies={addFavoriteMovies}/></Route>
+          <Route path="/movieapp/favorite"><Favorites searchMovie={searchMovie} favorite={favorite} search={search} favoriteMovies={favoriteMovies} removeFromWishlist={removeFromWishlist} removeAllFavorites={removeAllFavorites} /></Route>
+          <Route path="/movieapp/admin"><Dashboard movie={movie}/></Route>
       </BrowserRouter>
 
      </div>

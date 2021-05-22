@@ -8,7 +8,7 @@ function Series({movie,search,getFavorites,addFavoriteMovies,searchMovie,favorit
     return (
         <div className="series">
           <p className="pt-5">Series</p>
-          {/* <NavBar searchMovie={searchMovie} favorite={favorite}/> */}
+          <NavBar searchMovie={searchMovie} favorite={favorite}/>
           <SeriesPage search={search} movie={movie}  getFavorites={getFavorites} addFavoriteMovies={addFavoriteMovies}/>
           <Footer/>
         </div> 

@@ -9,7 +9,7 @@ function Home({movie, search,getFavorites,addFavoriteMovies,searchMovie,favorite
 
     return (
       <div className="home">
-           {/* <NavBar searchMovie={searchMovie} favorite={favorite}/> */}
+           <NavBar searchMovie={searchMovie} favorite={favorite}/>
            <Images />
            <Text />
            <Movies search={search} movie={movie} getFavorites={getFavorites} addFavoriteMovies={addFavoriteMovies}/>

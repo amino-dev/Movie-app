@@ -39,8 +39,20 @@ import {FaPlusCircle,FaMinusCircle,FaEdit} from 'react-icons/fa'
       )
     } 
 
+    const updateData=(e,id)=> {
+      axios.put(`http://localhost:3003/posts/${id}`)
+      .then(response => {
+          console.log(response);
+        })
+      .catch(err=> 
+        console.log(err)
+      );
+    } 
+
+
     return (
       <div className="dashboard pb-1">
+        
          <Button variant="" className="remove-button ml-5 mb-5" onClick={() => setShow(true)}>
         Add an item
       </Button>
@@ -149,7 +161,7 @@ import {FaPlusCircle,FaMinusCircle,FaEdit} from 'react-icons/fa'
                      </div> 
                      <div className="d-flex justify-content-center mb-2">
                      <Button className="btn-icon" onClick={(e) => deleteData(el.id)}><FaMinusCircle className="admin-icons icons"/></Button>
-                     <Button className="btn-icon"><FaEdit className="admin-icons icons"/></Button>
+                     <Button className="btn-icon"  onClick={(e) => updateData(el.id)}><FaEdit className="admin-icons icons"/></Button>
                      </div>
                  </figcaption>
                  </figure>

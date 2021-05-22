@@ -28,7 +28,7 @@ aria-labelledby="example-modal-sizes-title-lg"
 
 <Modal.Header closeButton>
  <Modal.Title>
-    
+    {el.title}
  </Modal.Title>
 </Modal.Header>
 <Modal.Body>

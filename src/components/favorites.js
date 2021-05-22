@@ -12,7 +12,7 @@ function Favorites({favoriteMovies,removeFromWishlist,removeAllFavorites,searchM
     return ( 
 
 <div>
-{/* <NavBar searchMovie={searchMovie} favorite={favorite}/> */}
+<NavBar searchMovie={searchMovie} favorite={favorite}/>
  <div className="favorite">
      <div className="d-flex justify-content-center pt-5">
        <img src={img}/>

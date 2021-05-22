@@ -15,10 +15,10 @@ function NavBar({searchMovie, favorite}){
       <FormControl type="text" placeholder="Search" className=" mr-sm-2" onChange={(searchMovie)}/>
     </Form>
     <Nav className="ml-auto">
-        <Link className="nav-link" to="/">Home</Link>
-        <Link className="nav-link" to="/movies">Movies</Link>
-        <Link className="nav-link" to="/series">Series</Link>
-        <Link className="nav-link" to="/favorite"><FaHeart className="favoris-button mb-1"/><Badge variant="secondary">{favorite}</Badge></Link>
+        <Link className="nav-link" to="/movieapp">Home</Link>
+        <Link className="nav-link" to="/movieapp/movies">Movies</Link>
+        <Link className="nav-link" to="/movieapp/series">Series</Link>
+        <Link className="nav-link" to="/movieapp/favorite"><FaHeart className="favoris-button mb-1"/><Badge variant="secondary">{favorite}</Badge></Link>
     </Nav>
   </Navbar.Collapse>
 </Navbar>
