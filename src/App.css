@@ -476,7 +476,7 @@
   
    .footer, #navbar {
      background-color: #cfcfcf !important;
-     color: rgba(0,0,0,.5);
+     color: rgba(0,0,0,.5) !important;
    }
 
    .footer {
@@ -544,11 +544,6 @@
     color: #fff !important;
   }
 
-  .dashboard {
-    padding-top: 6.5rem;
-    background-color: #0f181d;
-  }
-
   input[type=number]::-webkit-inner-spin-button {
     -webkit-appearance: none;
   }
@@ -564,9 +559,75 @@
 }
 
 .dashboard-card {
-  height: 23rem !important;
+ 
+  width: 20rem !important;
+  height: auto;
+  border-radius: 0px;
+}
+
+.dashboard-movie {
+  padding-top: 2rem;
+  background-color: #0f181d;
+  margin-left: -1.9rem; 
+}
+
+.dashboard {
+  overflow-x: hidden;
+}
+
+.dashboard-title {
+  margin-left: 28rem !important;
+}
+
+.nav-pills .nav-link {
+  border-radius: 0rem !important;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+  background-color: rgba(0,0,0,.5) !important ;
+  color: #fff !important ;
+}
+
+.nav-pills .nav-link {
+  color: rgba(0,0,0,.5) !important ;
+}
+
+.rating-dashboard {
+  left: 16rem !important;
 }
 
 .admin-icons {
  font-size : 2rem !important;
+}
+
+.dashboard-link {
+  vertical-align: middle;
+}
+
+.admin-img {
+  width: 3.5rem;
+  height: auto;
+}
+
+.admin-brand  {
+  border-radius: 50px;
+  background-color: #fff;
+}
+
+.panel{
+  background-color: #cfcfcf;
+}
+
+.table {
+  width: 60% !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+tr, tr:hover {
+  color :#fff !important
+}
+
+.user-icons {
+  color: #fff;
 }

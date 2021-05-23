@@ -15,7 +15,7 @@ function App() {
   const [movie, setMovie] = useState([])
   const getMovie = ()=>{
     
-    axios.get('http://localhost:3006/posts').then((response)=> { 
+    axios.get('http://localhost:3004/posts').then((response)=> { 
           
       setMovie(response.data)
 })
