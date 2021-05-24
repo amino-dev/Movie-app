@@ -34,8 +34,7 @@ const User = () => {
         .catch(err=> 
           console.log(err)
         )
-      } 
-  
+      }
       const updateData=(e,id)=> {
         axios.put(`http://localhost:3005/posts/${id}`)
         .then(response => {

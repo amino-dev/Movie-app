@@ -19,8 +19,7 @@ function App() {
           
       setMovie(response.data)
 })
-
-  }
+}
   
   useEffect(()=> {getMovie() },[])
 

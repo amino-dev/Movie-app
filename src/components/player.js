@@ -1,10 +1,9 @@
 import {Modal} from 'react-bootstrap'
 import ReactPlayer from 'react-player'
-
 import React, {useState,useEffect}  from 'react';
 
  
-function Player ({el,lgShow,setLgShow}){
+function Player ({el}){
     const [moviee, setMovie] = useState([])
     const gettMovie = ()=>{
       
@@ -14,8 +13,16 @@ function Player ({el,lgShow,setLgShow}){
     }
     
     useEffect(()=> {gettMovie() },[])
+
+     
+  const [show, setShow] = useState(false);
+  const [lgShow, setLgShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 return ( 
 <>
+<a  onClick={() => setLgShow(true)}><i className="ion-play icons mr-5"></i></a> 
 {moviee.map(el=>
     
 <Modal
@@ -28,13 +35,13 @@ aria-labelledby="example-modal-sizes-title-lg"
 
 <Modal.Header closeButton>
  <Modal.Title>
-    {el.title}
+    {el.Title}
  </Modal.Title>
 </Modal.Header>
 <Modal.Body>
-{/* <video controls width="250"
+<video controls width="250"
 src={el.Video}
-/> */}
+/> 
 <ReactPlayer className="video"
     url={el.Video}
     controls

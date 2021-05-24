@@ -32,10 +32,10 @@ return(
     <Col sm={9}>
       <Tab.Content>
         <Tab.Pane eventKey="first">
-           <MovieDashboard />
+           <MovieDashboard/>
         </Tab.Pane>
         <Tab.Pane eventKey="second">
-          {<User />}
+            <User />
         </Tab.Pane>
       </Tab.Content>
     </Col>

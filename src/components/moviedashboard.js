@@ -4,6 +4,7 @@ import {Form, Button, Modal} from 'react-bootstrap'
 import axios from "axios";
 import React, {useState,useEffect} from "react";
 import {FaPlusCircle,FaMinusCircle,FaEdit} from 'react-icons/fa'
+import Update from './update'
 
   const MovieDashboard = () => {
   const [details, setDetails] = useState({Poster: "", Title: "" ,Plot: "", Type: "", Genre: "",Year: "",Runtime: "",imdbRating: "",Rating: ""});
@@ -12,7 +13,6 @@ import {FaPlusCircle,FaMinusCircle,FaEdit} from 'react-icons/fa'
   const [data,setData]= useState([])
   const getData=()=> {
       axios.get('http://localhost:3004/posts').then((response) => {
-
           setData( response.data);
           console.log("response:", response);
         });
@@ -21,7 +21,7 @@ import {FaPlusCircle,FaMinusCircle,FaEdit} from 'react-icons/fa'
   useEffect(()=>{getData()},[])
 
     const handleSubmit = (e) => {
-      e.preventDefault();
+      // e.preventDefault();
       axios
         .post("http://localhost:3004/posts", details)
         .then((response) => console.log(response))
@@ -37,17 +37,6 @@ import {FaPlusCircle,FaMinusCircle,FaEdit} from 'react-icons/fa'
         console.log(err)
       )
     } 
-
-    const updateData=(e,id)=> {
-      axios.put(`http://localhost:3004/posts/${id}`)
-      .then(response => {
-          console.log(response);
-        })
-      .catch(err=> 
-        console.log(err)
-      );
-    } 
-
 
     return (
       <div className="dashboard-movie pb-1">
@@ -127,7 +116,7 @@ import {FaPlusCircle,FaMinusCircle,FaEdit} from 'react-icons/fa'
               }  placeholder="Runtime of the movie / serie" />
         </Form.Group>
         <Form.Group>
-          <Form.Control type="number" name="Plot"
+          <Form.Control type="number" name="Rating"
               value={details.Rating}
               onChange={(e) =>
                 setDetails({ ...details, Rating: e.target.value })
@@ -160,7 +149,7 @@ import {FaPlusCircle,FaMinusCircle,FaEdit} from 'react-icons/fa'
                      </div> 
                      <div className="d-flex justify-content-center mb-2">
                      <Button className="btn-icon" onClick={(e) => deleteData(el.id)}><FaMinusCircle className="admin-icons icons"/></Button>
-                     <Button className="btn-icon"  onClick={(e) => updateData(el.id)}><FaEdit className="admin-icons icons"/></Button>
+                     <Update el={el}/>
                      </div>
                  </figcaption>
                  </figure>

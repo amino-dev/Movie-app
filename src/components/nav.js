@@ -6,7 +6,9 @@ import React, {useState,useEffect} from "react";
 
 
 
+
 function NavBar({searchMovie, favorite}){
+
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);

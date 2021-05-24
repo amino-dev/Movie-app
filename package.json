@@ -13,6 +13,7 @@
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
     "cdbreact": "^1.1.0",
+    "firebase": "^8.6.2",
     "ityped": "^1.0.3",
     "mdbreact": "^5.0.2",
     "photoswipe": "^4.1.3",
