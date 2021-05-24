@@ -1,7 +1,7 @@
 import {Form, Button,Modal,Table} from 'react-bootstrap'
 import axios from "axios";
 import React, {useState,useEffect} from "react";
-import {FaPlusCircle,FaMinusCircle,FaEdit} from 'react-icons/fa'
+import {FaUserPlus,FaUserMinus,FaUserEdit} from 'react-icons/fa'
 
 const User = () => {
     const [details, setDetails] = useState({Email: "", Password: ""});
@@ -81,7 +81,7 @@ const User = () => {
                 } placeholder="User password" />
           </Form.Group> 
            <div className="d-flex justify-content-center">
-             <Button className="btn-icon" type="submit"><FaPlusCircle className="icon"/></Button>
+             <Button className="btn-icon" type="submit"><FaUserPlus className="icon"/></Button>
            </div>
         </Form>
             </p>
@@ -100,8 +100,8 @@ const User = () => {
             <tr>
                <td className="pt-3">{el.Email}</td>
                <td className="pt-3">{el.Password}</td>
-               <td><Button className="btn-icon" onClick={(e) => deleteData(el.id)}><FaMinusCircle className="user-icons"/></Button></td>
-               <td><Button className="btn-icon"  onClick={(e) => updateData(el.id)}><FaEdit className="user-icons"/></Button></td>   
+               <td><Button className="btn-icon" onClick={(e) => deleteData(el.id)}><FaUserMinus className="user-icons"/></Button></td>
+               <td><Button className="btn-icon"  onClick={(e) => updateData(el.id)}><FaUserEdit className="user-icons"/></Button></td>   
             </tr>
           ))}
         </tbody>

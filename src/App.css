@@ -534,6 +534,9 @@
   box-shadow: 0 0 0 0 !important;
   }
 
+  .btn-outline-dark  {
+    color: #495057 !important;
+  }
   .wish-list {
     color: #fff;
     padding-top: 5rem;
@@ -630,4 +633,16 @@ tr, tr:hover {
 
 .user-icons {
   color: #fff;
+}
+
+.connexion-button {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(0,0,0,.5) ;
+}
+
+
+
+.button-sign {
+  font-size: 1.2rem !important;
 }
