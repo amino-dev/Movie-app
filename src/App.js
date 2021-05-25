@@ -15,8 +15,7 @@ function App() {
   const [movie, setMovie] = useState([])
   const getMovie = ()=>{
     
-    axios.get('http://localhost:3004/posts').then((response)=> { 
-          
+    axios.get('https://movieapp-d38a8-default-rtdb.firebaseio.com/posts.json').then((response)=> {           
       setMovie(response.data)
 })
 }

@@ -71,6 +71,7 @@ const Update = ({el}) => {
               name="imdbRating"
               onChange={handleChange}
               placeholder="imdbRating of the movie"
+              min="1" max="10" step="0.1"
             />
           </Form.Group>
           <Form.Group>
@@ -112,10 +113,11 @@ const Update = ({el}) => {
           <Form.Group>
             <Form.Control
             defaultValue={el.Rating}
-              type="text"
+              type="number"
               name="Rating"
               onChange={handleChange}
               placeholder="Rating of the movie"
+              min="1" max="5" 
             />
           </Form.Group>
           <div className="d-flex justify-content-end">

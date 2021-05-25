@@ -6,7 +6,7 @@ import {FaFilm,FaUserCheck} from 'react-icons/fa'
 import admin from '../img/admin.png'
 import logo from '../img/logo.png'
 
-const Dashboard = () => {
+const Dashboard = ({movie}) => {
 return(
   <div className='dashboard'>
   <Tab.Container id="left-tabs-example" defaultActiveKey="first">
@@ -32,7 +32,7 @@ return(
     <Col sm={9}>
       <Tab.Content>
         <Tab.Pane eventKey="first">
-           <MovieDashboard/>
+           <MovieDashboard movie={movie}/>
         </Tab.Pane>
         <Tab.Pane eventKey="second">
             <User />

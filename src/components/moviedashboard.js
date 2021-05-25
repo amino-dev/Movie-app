@@ -6,19 +6,10 @@ import React, {useState,useEffect} from "react";
 import {FaPlusCircle,FaMinusCircle,FaEdit} from 'react-icons/fa'
 import Update from './update'
 
-  const MovieDashboard = () => {
+  const MovieDashboard = ({movie}) => {
   const [details, setDetails] = useState({Poster: "", Title: "" ,Plot: "", Type: "", Genre: "",Year: "",Runtime: "",imdbRating: "",Rating: ""});
   const [show, setShow] = useState(false);
   
-  const [data,setData]= useState([])
-  const getData=()=> {
-      axios.get('http://localhost:3004/posts').then((response) => {
-          setData( response.data);
-          console.log("response:", response);
-        });
-  }
-
-  useEffect(()=>{getData()},[])
 
     const handleSubmit = (e) => {
       // e.preventDefault();
@@ -130,7 +121,7 @@ import Update from './update'
         </Modal.Body>
       </Modal>
         <div className="d-flex justify-content-around flex-wrap">
-          {data.map((el) => (
+          {movie.map((el) => (
              <div className="movie-dashboard mb-5">
              <div className="position-relative">
                <div>
