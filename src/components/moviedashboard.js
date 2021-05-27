@@ -12,15 +12,16 @@ import Update from './update'
   
 
     const handleSubmit = (e) => {
-      // e.preventDefault();
+      
+      e.preventDefault();
       axios
-        .post("http://localhost:3004/posts", details)
+        .post("https://movieapp-d38a8-default-rtdb.firebaseio.com/posts.json",JSON.stringify(details))
         .then((response) => console.log(response))
         .catch((error) => console.log(error));
     };
 
     const deleteData=(id)=> {
-      axios.delete(`http://localhost:3004/posts/${id}`)
+      axios.delete(`https://movieapp-d38a8-default-rtdb.firebaseio.com/posts/${id}.json`)
       .then(response => {
           console.log(response);
         })

@@ -13,10 +13,11 @@ import {BrowserRouter, Route} from "react-router-dom"
 
 function App() {
   const [movie, setMovie] = useState([])
+
   const getMovie = ()=>{
     
     axios.get('https://movieapp-d38a8-default-rtdb.firebaseio.com/posts.json').then((response)=> {           
-      setMovie(response.data)
+      setMovie(Object.values(response.data))
 })
 }
   

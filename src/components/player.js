@@ -1,20 +1,12 @@
 import {Modal} from 'react-bootstrap'
 import ReactPlayer from 'react-player'
 import React, {useState,useEffect}  from 'react';
+import axios from "axios";
 
  
-function Player ({el}){
-    const [moviee, setMovie] = useState([])
-    const gettMovie = ()=>{
-      
-      fetch('movies.json').then(
-            response => response.json()).then 
-                     (moviee => setMovie(moviee));
-    }
-    
-    useEffect(()=> {gettMovie() },[])
-
-     
+function Player ({el,movie}){
+ 
+   
   const [show, setShow] = useState(false);
   const [lgShow, setLgShow] = useState(false);
 
@@ -23,7 +15,7 @@ function Player ({el}){
 return ( 
 <>
 <a  onClick={() => setLgShow(true)}><i className="ion-play icons mr-5"></i></a> 
-{moviee.map(el=>
+{movie.map(el=>
     
 <Modal
  
@@ -39,9 +31,6 @@ aria-labelledby="example-modal-sizes-title-lg"
  </Modal.Title>
 </Modal.Header>
 <Modal.Body>
-<video controls width="250"
-src={el.Video}
-/> 
 <ReactPlayer className="video"
     url={el.Video}
     controls

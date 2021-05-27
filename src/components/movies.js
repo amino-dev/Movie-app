@@ -43,8 +43,7 @@ function Movies({search,movie,getFavorites,addFavoriteMovies}) {
 			      <div className="d-flex justify-content-around mb-2">
               <p className="my-auto ">{el.Year}</p>
               <p className="my-auto mr-3">{el.Runtime}</p>
-              {/* <Player  el={el}/> */}
-              {/* <a  onClick={() => setLgShow(true)}><i className="ion-play icons mr-5"></i></a> */}
+              {/* <Player  el={el} movie={movie}/>  */}
               <a onClick={ () => {getFavorites(); addFavoriteMovies(el)}}><i class="ion-heart icons"></i></a>
               {/* <Button variant="" ><FaEye className="icons"/></Button>
               <Button variant="" ><FaHeart className="icons"/></Button> */}

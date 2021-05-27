@@ -14,7 +14,7 @@ const Update = ({el}) => {
     }
 
     const updateData=(id)=> {
-      axios.put(`http://localhost:3004/posts/${id}`,input)
+      axios.put(`https://movieapp-d38a8-default-rtdb.firebaseio.com/posts.json/${id}`,input)
       .then(response => {
           setInput(response.data)
         })
