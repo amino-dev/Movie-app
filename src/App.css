@@ -550,7 +550,7 @@
   input[type=number]::-webkit-inner-spin-button {
     -webkit-appearance: none;
   }
-
+  
   .icon {
     font-size : 1.5rem;
   }
@@ -640,8 +640,6 @@ tr, tr:hover {
   justify-content: center;
   background-color: rgba(0,0,0,.5) ;
 }
-
-
 
 .button-sign {
   font-size: 1.2rem !important;

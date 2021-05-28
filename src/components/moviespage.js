@@ -4,7 +4,6 @@ import 'react-rater/lib/react-rater.css'
 // import {FaHeart, FaEye} from 'react-icons/fa'
 // import {Card, Button} from 'react-bootstrap'
 
-
 function MoviesPage({search,movie,getFavorites,addFavoriteMovies}) {
   return(
   <div className="movies-card container">
@@ -29,7 +28,7 @@ function MoviesPage({search,movie,getFavorites,addFavoriteMovies}) {
               <p className="my-auto">{movie[id].Year}</p>
               <p className="my-auto mr-3">{movie[id].Runtime}</p>
               <a><i className="ion-eye icons mr-5"></i></a>
-              <a onClick={ () => {getFavorites(); addFavoriteMovies(id)}}><i class="ion-heart icons"></i></a>
+              <a onClick={ () => {getFavorites(); addFavoriteMovies(movie[id])}}><i class="ion-heart icons"></i></a>
               {/* <Button variant="" ><FaEye className="icons"/></Button>
               <Button variant="" ><FaHeart className="icons"/></Button> */}
             </div> 
