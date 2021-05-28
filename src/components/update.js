@@ -3,8 +3,8 @@ import {FaEdit} from 'react-icons/fa'
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 
-const Update = ({el}) => {
-    const [input,setInput] = useState({Poster: el.Poster, Title: el.Title ,Plot: el.Plot, Type: el.Type, Genre: el.Genre,Year: el.Year,Runtime: el.Runtime,imdbRating: el.imdbRating,Rating: el.Rating})
+const Update = ({id,movie}) => {
+    const [input,setInput] = useState({Poster: movie[id].Poster, Title: movie[id].Title ,Plot: movie[id].Plot, Type: movie[id].Type, Genre: movie[id].Genre,Year: movie[id].Year,Runtime: movie[id].Runtime,imdbRating: movie[id].imdbRating,Rating: movie[id].Rating})
    
 
     const handleChange=(e)=> {
@@ -14,9 +14,9 @@ const Update = ({el}) => {
     }
 
     const updateData=(id)=> {
-      axios.put(`https://movieapp-d38a8-default-rtdb.firebaseio.com/posts.json/${id}`,input)
+      axios.put(`https://movieapp-d38a8-default-rtdb.firebaseio.com/posts/${id}.json`,input)
       .then(response => {
-          setInput(response.data)
+          setInput((response.data))
         })
       .catch(err=> 
         console.log(err)
@@ -39,7 +39,7 @@ const Update = ({el}) => {
         <Form >
         <Form.Group>
             <Form.Control
-              defaultValue={el.Poster}
+              defaultValue={movie[id].Poster}
               type="text"
               name="Poster"
               onChange={handleChange}
@@ -48,7 +48,7 @@ const Update = ({el}) => {
           </Form.Group>
           <Form.Group>
             <Form.Control
-              defaultValue={el.Title}
+              defaultValue={movie[id].Title}
               type="text"
               name="Title"
               onChange={handleChange}
@@ -57,7 +57,7 @@ const Update = ({el}) => {
           </Form.Group>
           <Form.Group>
             <Form.Control
-              defaultValue={el.Plot}
+              defaultValue={movie[id].Plot}
               type="url"
               name="Plot"
               onChange={handleChange}
@@ -66,7 +66,7 @@ const Update = ({el}) => {
            </Form.Group>
            <Form.Group>
             <Form.Control
-              defaultValue={el.imdbRating}
+              defaultValue={movie[id].imdbRating}
               type="number"
               name="imdbRating"
               onChange={handleChange}
@@ -76,7 +76,7 @@ const Update = ({el}) => {
           </Form.Group>
           <Form.Group>
             <Form.Control
-            defaultValue={el.Type}
+            defaultValue={movie[id].Type}
               type="text"
               name="Type"
               onChange={handleChange}
@@ -85,7 +85,7 @@ const Update = ({el}) => {
           </Form.Group>
           <Form.Group>
             <Form.Control
-            defaultValue={el.Genre}
+            defaultValue={movie[id].Genre}
               type="text"
               name="Genre"
               onChange={handleChange}
@@ -94,7 +94,7 @@ const Update = ({el}) => {
           </Form.Group>
           <Form.Group>
             <Form.Control
-            defaultValue={el.Year}
+            defaultValue={movie[id].Year}
               type="number"
               name="Year"
               onChange={handleChange}
@@ -103,7 +103,7 @@ const Update = ({el}) => {
           </Form.Group>
           <Form.Group>
             <Form.Control
-            defaultValue={el.Runtime}
+            defaultValue={movie[id].Runtime}
               type="text"
               name="Runtime"
               onChange={handleChange}
@@ -112,7 +112,7 @@ const Update = ({el}) => {
           </Form.Group>
           <Form.Group>
             <Form.Control
-            defaultValue={el.Rating}
+            defaultValue={movie[id].Rating}
               type="number"
               name="Rating"
               onChange={handleChange}
@@ -124,7 +124,7 @@ const Update = ({el}) => {
           <Button variant="secondary" className="mr-3" onClick={handleClose1}>
             Close
           </Button>
-          <Button onClick={()=>updateData(el.id)} variant="primary"  className="submit">
+          <Button onClick={()=>updateData(id)} variant="primary"  className="submit">
             update
           </Button>
           </div>

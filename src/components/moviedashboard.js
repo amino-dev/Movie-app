@@ -122,36 +122,36 @@ import Update from './update'
         </Modal.Body>
       </Modal>
         <div className="d-flex justify-content-around flex-wrap">
-          {movie.map((el) => (
+          {Object.keys(movie).map((id) => (
              <div className="movie-dashboard mb-5">
              <div className="position-relative">
                <div>
                 <figure className="hover-img">
-                 <img className=" dashboard-card" variant="top" src={el.Poster} />
+                 <img className=" dashboard-card" variant="top" src={movie[id].Poster} />
                  <figcaption>
-                   <h5 className="text-center mb-3">{el.Title}</h5>
-                   <p className="text-center mb-3 plot">{el.Plot}</p>
+                   <h5 className="text-center mb-3">{movie[id].Title}</h5>
+                   <p className="text-center mb-3 plot">{movie[id].Plot}</p>
                    <div className="d-flex justify-content-around mb-3">
-                    <p className="">{el.Type}</p>
-                    <p className="">{el.Genre}</p>
+                    <p className="">{movie[id].Type}</p>
+                    <p className="">{movie[id].Genre}</p>
                    </div> 
                    <div className="d-flex justify-content-around mb-2">
-                     <p className="my-auto ">{el.Year}</p>
-                     <p className="my-auto mr-3">{el.Runtime}</p>
+                     <p className="my-auto ">{movie[id].Year}</p>
+                     <p className="my-auto mr-3">{movie[id].Runtime}</p>
                      </div> 
                      <div className="d-flex justify-content-center mb-2">
-                     <Button className="btn-icon" onClick={(e) => deleteData(el.id)}><FaMinusCircle className="admin-icons icons"/></Button>
-                     <Update el={el}/>
+                     <Button className="btn-icon" onClick={() => deleteData(id)}><FaMinusCircle className="admin-icons icons"/></Button>
+                     <Update id={id} movie={movie}/>
                      </div>
                  </figcaption>
                  </figure>
                </div>
                <div className=" position-absolute position-rating rating-dashboard position-absolute top-0 end-50">
-                 <p className="rating"><span>{el.imdbRating}</span></p>
+                 <p className="rating"><span>{movie[id].imdbRating}</span></p>
                </div>
              </div>
              <div className="d-flex justify-content-center">
-               <Rater interactive={false} total={5} rating={el.Rating}/>
+               <Rater interactive={false} total={5} rating={movie[id].Rating}/>
              </div>
             </div>
           ))}

@@ -13,15 +13,28 @@ import {BrowserRouter, Route} from "react-router-dom"
 
 function App() {
   const [movie, setMovie] = useState([])
-
   const getMovie = ()=>{
-    
+
     axios.get('https://movieapp-d38a8-default-rtdb.firebaseio.com/posts.json').then((response)=> {           
-      setMovie(Object.values(response.data))
+      setMovie(response.data)
 })
 }
   
   useEffect(()=> {getMovie() },[])
+
+
+//   const [key, setKey] = useState([])
+
+//   const getKey = ()=>{
+    
+//     axios.get('https://movieapp-d38a8-default-rtdb.firebaseio.com/posts.json').then((response)=> {           
+//       setKey(Object.keys(response.data))
+//   })
+//  }
+
+//   useEffect(()=> {getKey() },[])
+
+
 
   const [search, setSearch]= useState("")
   const searchMovie =(event)=> {

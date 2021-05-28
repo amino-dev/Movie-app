@@ -8,28 +8,28 @@ import 'react-rater/lib/react-rater.css'
 function MoviesPage({search,movie,getFavorites,addFavoriteMovies}) {
   return(
   <div className="movies-card container">
-   {movie.filter((el) => {
-      if ((el.Type === "movie" && search === "") || (el.Type === "movie" && el.Title.toLowerCase().includes(search.toLowerCase()))){
-       return el
+   {Object.keys(movie).filter((id) => {
+      if ((movie[id].Type === "movie" && search === "") || (movie[id].Type === "movie" && movie[id].Title.toLowerCase().includes(search.toLowerCase()))){
+       return id
      }
-    }).map(el=>
+    }).map(id=>
      <div className="movie-card mb-5">
       <div className="position-relative">
         <div>
          <figure className="hover-img">
-          <img className="card-img" variant="top" src={el.Poster} />
+          <img className="card-img" variant="top" src={movie[id].Poster} />
 		      <figcaption>
-            <h5 className="text-center mb-3">{el.Title}</h5>
-            <p className="text-center mb-3 plot">{el.Plot}</p>
+            <h5 className="text-center mb-3">{movie[id].Title}</h5>
+            <p className="text-center mb-3 plot">{movie[id].Plot}</p>
             <div className="d-flex justify-content-around mb-3">
-             <p className="">{el.Type}</p>
-             <p className="">{el.Genre}</p>
+             <p className="">{movie[id].Type}</p>
+             <p className="">{movie[id].Genre}</p>
             </div> 
 			      <div className="d-flex justify-content-around mb-2">
-              <p className="my-auto">{el.Year}</p>
-              <p className="my-auto mr-3">{el.Runtime}</p>
+              <p className="my-auto">{movie[id].Year}</p>
+              <p className="my-auto mr-3">{movie[id].Runtime}</p>
               <a><i className="ion-eye icons mr-5"></i></a>
-              <a onClick={ () => {getFavorites(); addFavoriteMovies(el)}}><i class="ion-heart icons"></i></a>
+              <a onClick={ () => {getFavorites(); addFavoriteMovies(id)}}><i class="ion-heart icons"></i></a>
               {/* <Button variant="" ><FaEye className="icons"/></Button>
               <Button variant="" ><FaHeart className="icons"/></Button> */}
             </div> 
@@ -37,11 +37,11 @@ function MoviesPage({search,movie,getFavorites,addFavoriteMovies}) {
    	     </figure>
         </div>
         <div class=" position-absolute position-rating position-absolute top-0 end-50">
-          <p className="rating"><span>{el.imdbRating}</span></p>
+          <p className="rating"><span>{movie[id].imdbRating}</span></p>
         </div>
       </div>
       <div className="d-flex justify-content-center">
-        <Rater interactive={false} total={5} rating={el.Rating}/>
+        <Rater interactive={false} total={5} rating={movie[id].Rating}/>
       </div>
      </div>
    ) }
