@@ -562,9 +562,8 @@
 }
 
 .dashboard-card {
- 
   width: 20rem !important;
-  height: auto;
+  height: 25rem !important;
   border-radius: 0px;
 }
 

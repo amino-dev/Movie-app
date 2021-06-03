@@ -15,7 +15,7 @@ import Update from './update'
       
       e.preventDefault();
       axios
-        .post("https://movieapp-d38a8-default-rtdb.firebaseio.com/posts.json",JSON.stringify(details))
+        .post("https://movieapp-d38a8-default-rtdb.firebaseio.com/posts.json",details)
         .then((response) => console.log(response))
         .catch((error) => console.log(error));
     };
@@ -127,7 +127,7 @@ import Update from './update'
              <div className="position-relative">
                <div>
                 <figure className="hover-img">
-                 <img className=" dashboard-card" variant="top" src={movie[id].Poster} />
+                 <img className="dashboard-card" variant="top" src={movie[id].Poster} />
                  <figcaption>
                    <h5 className="text-center mb-3">{movie[id].Title}</h5>
                    <p className="text-center mb-3 plot">{movie[id].Plot}</p>
