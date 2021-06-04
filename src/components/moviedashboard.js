@@ -16,25 +16,32 @@ import Update from './update'
       e.preventDefault();
       axios
         .post("https://movieapp-d38a8-default-rtdb.firebaseio.com/posts.json",details)
-        .then((response) => console.log(response))
+        .then(response => {
+          reload();
+        })
         .catch((error) => console.log(error));
     };
 
     const deleteData=(id)=> {
       axios.delete(`https://movieapp-d38a8-default-rtdb.firebaseio.com/posts/${id}.json`)
       .then(response => {
-          console.log(response);
+          reload();
         })
       .catch(err=> 
         console.log(err)
       )
     } 
 
+    const reload =() => {
+      window.location.reload()
+    }
+
+   
     return (
       <div className="dashboard-movie pb-1">
         
          <Button variant="" className="remove-button ml-5 mb-5" onClick={() => setShow(true)}>
-        Add an item
+        Add a movie
       </Button>
       <Modal
         show={show}
@@ -44,7 +51,7 @@ import Update from './update'
       >
         <Modal.Header closeButton>
           <Modal.Title id="example-custom-modal-styling-title">
-            item infos
+            movie infos
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>

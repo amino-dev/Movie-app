@@ -16,10 +16,9 @@ function App() {
   const getMovie = ()=>{
 
     axios.get('https://movieapp-d38a8-default-rtdb.firebaseio.com/posts.json').then((response)=> {           
-      setMovie(response.data)
+      setMovie(response.data)     
 })
 }
-  
   useEffect(()=> {getMovie() },[])
 
 
@@ -41,16 +40,16 @@ function App() {
    let input = event.target.value
     setSearch(input)}
 
-  const [favorite, setFavorite] = useState(0)
-  const getFavorites =() => {
-    setFavorite(favorite + 1)
-  }
-
-  const [favoriteMovies, setFavoriteMovies] = useState([])
-  const addFavoriteMovies =(e) => {
-  favoriteMovies.push(e)
-  }
+    const [favorite, setFavorite] = useState(0)
+    const getFavorites =() => {
+      setFavorite(favorite + 1)
+    }
   
+    const [favoriteMovies, setFavoriteMovies] = useState([])
+    const addFavoriteMovies =(e) => {
+    favoriteMovies.push(e)
+    }
+    
   const removeFromWishlist = (el) => {
     let index = favoriteMovies.indexOf(el)
     if (index !== -1) {

@@ -17,11 +17,16 @@ const Update = ({id,movie}) => {
       axios.put(`https://movieapp-d38a8-default-rtdb.firebaseio.com/posts/${id}.json`,input)
       .then(response => {
           setInput((response.data))
+          reload()
         })
       .catch(err=> 
         console.log(err)
       );
     } 
+
+    const reload =() => {
+      window.location.reload()
+    }
 
     const [show1, setShow1] = useState(false);
     const handleClose1 = () => setShow1(false);
