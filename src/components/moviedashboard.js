@@ -15,7 +15,7 @@ import Update from './update'
       
       e.preventDefault();
       axios
-        .post("https://movieapp-d38a8-default-rtdb.firebaseio.com/posts.json",details)
+        .post("https://movie-cddbd-default-rtdb.firebaseio.com/posts.json",details)
         .then(response => {
           reload();
         })
@@ -23,7 +23,7 @@ import Update from './update'
     };
 
     const deleteData=(id)=> {
-      axios.delete(`https://movieapp-d38a8-default-rtdb.firebaseio.com/posts/${id}.json`)
+      axios.delete(`https://movie-cddbd-default-rtdb.firebaseio.com/posts/${id}.json`)
       .then(response => {
           reload();
         })

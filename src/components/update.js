@@ -14,7 +14,7 @@ const Update = ({id,movie}) => {
     }
 
     const updateData=(id)=> {
-      axios.put(`https://movieapp-d38a8-default-rtdb.firebaseio.com/posts/${id}.json`,input)
+      axios.put(`https://movie-cddbd-default-rtdb.firebaseio.com/posts/${id}.json`,input)
       .then(response => {
           setInput((response.data))
           reload()
